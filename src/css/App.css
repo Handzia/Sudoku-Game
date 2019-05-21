@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.Buttons-wrapper {
+    display: flex;
+    justify-content: space-between;
+}

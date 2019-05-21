@@ -1,0 +1,7 @@
+.Tile {
+    border: 2px solid grey;
+    padding: 5px;
+    width: calc(100% / 9);
+    height: calc(100% / 9);
+    background-color: lightyellow;
+}
