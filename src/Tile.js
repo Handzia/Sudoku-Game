@@ -2,17 +2,36 @@ import React from 'react';
 import './css/Tile.css';
 
 
-class Tile extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            tileValue: this.props.tile
-        };
+const Tile = (props) => {
+    let tile;
+    if (props.tile === '.') {
+        tile = '';
+    } else {
+        tile = props.tile;
     }
-    render(){
+    
+    if (tile === '') {
         return(
             <div className="Tile">
-                {this.state.tileValue}
+                <input
+                    className="Tile-input"
+                    type="number"
+                    min="1"
+                    max="9"
+                    onChange={(e) => props.handleChange(e.target.value)}
+                    value={tile}
+                />
+            </div>
+        )
+    } else {
+        return(
+            <div className="Tile">
+                <input
+                    className="Tile-input Disabled-input"
+                    type="number"
+                    value={tile}
+                    disabled
+                />
             </div>
         )
     }    
