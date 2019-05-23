@@ -9,8 +9,8 @@ const Tile = (props) => {
     } else {
         tile = props.tile;
     }
-    
-    if (tile === '') {
+
+    if (props.initialTile === '.') {
         return(
             <div className="Tile">
                 <input

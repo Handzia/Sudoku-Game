@@ -6,14 +6,21 @@ class Board extends React.Component{
     constructor(props){
         super(props);
         this.state = {
+            initialBoard: this.props.initialBoard,
             board: this.props.board
         };
     }
 
     render(){
-        let tiles = this.state.board.split('').map((tile, i) => {
-            return <Tile tile={tile} handleChange={(tile) => this.props.updateBoard(tile, i)} key={i} />
-        });
+        let initialTiles = this.state.initialBoard.split('');
+        let tiles = this.state.board.split('').map((tile, i) => 
+            <Tile 
+                tile={tile}
+                initialTile={initialTiles[i]}
+                handleChange={(tile) => this.props.updateBoard(tile, i)}
+                key={i}
+            />
+        );
 
         return (
             <div className="Board">    
