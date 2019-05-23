@@ -12,14 +12,13 @@ class App extends React.Component {
             initialBoard: firstBoard,
             board: firstBoard
         };
-
     }
 
     getNewBoard() {
-        const board = sudoku.generate("easy");
+        const newBoard = sudoku.generate("easy");
         this.setState({
-            initialBoard: board,
-            board: board
+            initialBoard: newBoard,
+            board: newBoard
         });
         console.log(this.state.board);
     }
