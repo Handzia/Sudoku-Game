@@ -1,7 +1,8 @@
 .Tile {
-    border: 1px solid grey;
+    border: 1px solid black;
     width: calc(100% / 9);
     height: calc(100% / 9);
+    background-color: #f2f4f4;
 }
 .Tile-input {
     width: 100%;
@@ -16,5 +17,6 @@
 
 .Disabled-input {
     font-weight: normal;
-    color: red;
+    color: #087399;
+    background-color: #e3e8ea;
 }

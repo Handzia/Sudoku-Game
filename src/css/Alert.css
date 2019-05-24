@@ -1,0 +1,64 @@
+.Overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.Alert {
+    min-width: 300px;
+    min-height: 150px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+}
+
+.Alert-text {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px 30px;
+    border-top: 3px solid #087399;
+    border-bottom: 3px solid #087399;
+}
+
+.Close-button {
+    width: 40px;
+    height: 40px;
+    border: 3px solid black;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.Close-button::before, .Close-button::after {
+    display: block;
+    content: '';
+    width: 15px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    top: 15px;
+    left: 9px;
+}
+.Close-button::before {
+    transform: rotate(45deg);  
+}
+.Close-button::after {
+    transform: rotate(-45deg);
+}
+
+.Close-button:hover {
+    background-color: #e3e8ea;
+}

@@ -5,12 +5,12 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    border: 8px solid grey;
+    border: 8px solid black;
 }
 
 .Border-right {
-    border-right: 4px solid grey;
+    border-right: 4px solid black;
 }
 .Border-bottom {
-    border-bottom: 4px solid grey;
+    border-bottom: 4px solid black;
 }

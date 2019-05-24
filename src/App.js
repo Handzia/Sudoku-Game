@@ -1,16 +1,25 @@
 import React from 'react';
 import sudoku from 'sudoku-umd';
 import Board from './Board';
+import Alert from './Alert';
 import './css/App.css';
 
 class App extends React.Component {
     constructor(props){
         super(props);
-        const firstBoard = sudoku.generate("easy");
+        
         this.updateBoard = this.updateBoard.bind(this);
+        this.getNewBoard = this.getNewBoard.bind(this);
+        this.restart = this.restart.bind(this);
+        this.solve = this.solve.bind(this);
+        this.check = this.check.bind(this);
+        this.hideAlert = this.hideAlert.bind(this);
+        
         this.state = {
-            initialBoard: firstBoard,
-            board: firstBoard
+            initialBoard: '',
+            board: '',
+            showAlert: false,
+            alertText: ''
         };
     }
 
@@ -20,19 +29,29 @@ class App extends React.Component {
             initialBoard: newBoard,
             board: newBoard
         });
-        console.log(this.state.board);
     }
 
     updateBoard(tile, index){
         let tileValue = tile;
+        
         if (tile === '') {
             tileValue = '.';
         };
+            
+        if (tileValue > 9) {
+            tileValue = tileValue.charAt(0);
+        };
+
+        if (tileValue === 0) {
+            this.setState({
+                showAlert: true,
+                alertText: 'Uncorrect number!'
+            });
+        }
+
         let tiles = this.state.board.split('');
         tiles.splice(index, 1, tileValue);
         this.setState({board: tiles.join().replace(/,/g, '')});
-        
-        console.log(this.state.board);
     }
 
     restart(){
@@ -47,33 +66,54 @@ class App extends React.Component {
             this.setState({
                 board: solvedBoard
             });
-            console.log(solvedBoard);
         } else {
-            console.log('ERROR');
+            this.setState({
+                showAlert: true,
+                alertText: 'This sudoku can not be solved! Correct your numbers and try again.'
+            });
         }    
     }
     check(){
         if (sudoku.solve(this.state.board)) {
-            console.log('KEEP GOING!');
+            this.setState({
+                showAlert: true,
+                alertText: 'All is correct. Keep going!'
+            });
         } else {
-            console.log('ERROR');
+            this.setState({
+                showAlert: true,
+                alertText: 'Correct your numbers! Something went wrong...'
+            });
         }
+    }
+    hideAlert(){
+       this.setState({
+            showAlert: false,
+            alertText: ''
+        }); 
     }
 
     render(){
         return(
             <div className="App">
-                <h1>SUDOKU</h1>
-                <Board 
-                    board={this.state.board}
-                    initialBoard={this.state.initialBoard}
-                    updateBoard={this.updateBoard}
-                />
-                <div className="Buttons-wrapper">
-                    <button onClick={() => this.check()}>Check</button>
-                    <button onClick={() => this.getNewBoard()}>New Game</button>
-                    <button onClick={() => this.solve()}>Solve</button>
-                    <button onClick={() => this.restart()}>Restart</button>
+                <div className="App-container">
+                    <h1>S U D O K U</h1>
+                    <Board 
+                        board={this.state.board}
+                        initialBoard={this.state.initialBoard}
+                        updateBoard={this.updateBoard}
+                    />
+                    <div className="Buttons-wrapper">
+                        <button className="App-button" onClick={this.check}>Check</button>
+                        <button className="App-button" onClick={this.getNewBoard}>New Game</button>
+                        <button className="App-button" onClick={this.solve}>Solve</button>
+                        <button className="App-button" onClick={this.restart}>Restart</button>
+                    </div>
+                    <Alert
+                        showAlert={this.state.showAlert}
+                        alertText={this.state.alertText}
+                        hideAlert={this.hideAlert}
+                    />
                 </div>
             </div>
         )

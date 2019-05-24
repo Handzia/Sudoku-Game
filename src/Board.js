@@ -5,10 +5,6 @@ import './css/Board.css';
 class Board extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            initialBoard: this.props.initialBoard,
-            board: this.props.board
-        };
     }
     addBorder(index){
         const borderRightTiles = [2, 5, 11, 14, 20, 23, 29, 32, 38, 41, 47, 50, 56, 59, 65, 68, 74, 77];
@@ -32,8 +28,12 @@ class Board extends React.Component{
     }
 
     render(){
-        let initialTiles = this.state.initialBoard.split('');
-        let tiles = this.state.board.split('').map((tile, i) =>
+        let initialTiles = this.props.initialBoard.split('');
+        let tiles = this.props.board;
+        if (tiles === '') {
+            tiles = '.................................................................................';
+        }
+        tiles = tiles.split('').map((tile, i) =>
             <Tile 
                 tile={tile}
                 initialTile={initialTiles[i]}
