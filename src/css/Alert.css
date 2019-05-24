@@ -8,14 +8,14 @@
 }
 
 .Alert {
-    min-width: 300px;
+    width: 400px;
     min-height: 150px;
     background-color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid black;
+    border: 3px solid #365660;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@
 .Close-button {
     width: 40px;
     height: 40px;
-    border: 3px solid black;
+    border: 3px solid #365660;
     border-radius: 50%;
     background-color: #fff;
     position: absolute;
@@ -45,12 +45,12 @@
 .Close-button::before, .Close-button::after {
     display: block;
     content: '';
-    width: 15px;
+    width: 14px;
     height: 3px;
-    background-color: black;
+    background-color: #365660;
     position: absolute;
     top: 15px;
-    left: 9px;
+    left: 10px;
 }
 .Close-button::before {
     transform: rotate(45deg);  
@@ -61,4 +61,10 @@
 
 .Close-button:hover {
     background-color: #e3e8ea;
+}
+
+@media (max-width: 520px) {
+    .Alert {
+        max-width: 80vw;
+    }
 }

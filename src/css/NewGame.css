@@ -1,0 +1,34 @@
+.NewGame-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+}
+
+.Levels {
+    max-width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Level-button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px solid #083644;
+    background-color: #e3e8ea;
+    transition: .3s;
+}
+
+.Level-button:hover, .Active {
+    background-color: #0e6784;
+    color: #e3e8ea;
+}
+
+@media (max-width: 520px) {
+    .Level-button {
+        margin: 0 3px;
+    }
+}

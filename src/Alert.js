@@ -16,12 +16,7 @@ const Alert = (props) => {
                 </div>
             </div>
         )
-    } else {
-    return (
-        <div>
-            puste
-        </div>
-    )}
+    } else {return <div></div>}
 };
 
 export default Alert;

@@ -5,12 +5,19 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    border: 8px solid black;
+    border: 8px solid #083644;
 }
 
 .Border-right {
-    border-right: 4px solid black;
+    border-right: 4px solid #083644;
 }
 .Border-bottom {
-    border-bottom: 4px solid black;
+    border-bottom: 4px solid #083644;
+}
+
+@media (max-width: 520px) {
+    .Board {
+        width: calc(100vw - 10px);
+        height: calc(100vw - 10px);
+    }
 }

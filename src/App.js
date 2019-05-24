@@ -1,5 +1,6 @@
 import React from 'react';
 import sudoku from 'sudoku-umd';
+import NewGame from './NewGame';
 import Board from './Board';
 import Alert from './Alert';
 import './css/App.css';
@@ -14,17 +15,23 @@ class App extends React.Component {
         this.solve = this.solve.bind(this);
         this.check = this.check.bind(this);
         this.hideAlert = this.hideAlert.bind(this);
+        this.chooseLevel = this.chooseLevel.bind(this);
         
         this.state = {
             initialBoard: '',
             board: '',
+            level: 'easy',
             showAlert: false,
             alertText: ''
         };
     }
 
+    chooseLevel(level){        
+        this.setState({level: level});
+    }
+
     getNewBoard() {
-        const newBoard = sudoku.generate("easy");
+        const newBoard = sudoku.generate(this.state.level);
         this.setState({
             initialBoard: newBoard,
             board: newBoard
@@ -98,6 +105,12 @@ class App extends React.Component {
             <div className="App">
                 <div className="App-container">
                     <h1>S U D O K U</h1>
+                    
+                    <NewGame 
+                        level={this.state.level}
+                        chooseLevel={this.chooseLevel}
+                        getNewBoard={this.getNewBoard}
+                    />
                     <Board 
                         board={this.state.board}
                         initialBoard={this.state.initialBoard}
@@ -105,10 +118,10 @@ class App extends React.Component {
                     />
                     <div className="Buttons-wrapper">
                         <button className="App-button" onClick={this.check}>Check</button>
-                        <button className="App-button" onClick={this.getNewBoard}>New Game</button>
                         <button className="App-button" onClick={this.solve}>Solve</button>
                         <button className="App-button" onClick={this.restart}>Restart</button>
                     </div>
+                    
                     <Alert
                         showAlert={this.state.showAlert}
                         alertText={this.state.alertText}
