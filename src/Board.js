@@ -31,7 +31,9 @@ class Board extends React.Component{
         let initialTiles = this.props.initialBoard.split('');
         let tiles = this.props.board;
         if (tiles === '') {
-            tiles = '.................................................................................';
+            for(let n=0; n<81; n++) {
+                tiles += '.';
+            }    
         }
         tiles = tiles.split('').map((tile, i) =>
             <Tile 

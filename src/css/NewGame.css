@@ -17,13 +17,16 @@
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    border: 3px solid #083644;
+    border: 3px solid #010309;
     background-color: #e3e8ea;
-    transition: .3s;
+    transition: .15s;
+}
+.Level-button:first-child {
+    margin-left: 0;
 }
 
 .Level-button:hover, .Active {
-    background-color: #0e6784;
+    background-color: #2751c4;
     color: #e3e8ea;
 }
 

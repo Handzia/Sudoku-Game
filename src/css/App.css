@@ -12,8 +12,8 @@
 
 h1 {
     font-size: 56px;
-    color: #083644;
-    text-shadow: 3px -2px 0 #e3e8ea;
+    color: #e3e8ea;
+    text-shadow: 6px -2px 0 #010309;
 }
 
 .Buttons-wrapper {
@@ -24,15 +24,16 @@ h1 {
 .App-button {
     padding: 10px 25px;
     font-size: 14px;
+    color: #010309;
     font-weight: bold;
     text-transform: uppercase;
-    border: 3px solid #083644;
+    border: 3px solid #010309;
     background-color: #e3e8ea;
-    transition: .3s;
+    transition: .15s;
 }
 
 .App-button:hover {
-    background-color: #0e6784;
+    background-color: #2751c4;
     color: #e3e8ea;
 }
 
