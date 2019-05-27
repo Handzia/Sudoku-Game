@@ -23,6 +23,10 @@
     -moz-appearance:textfield;
     padding-left: 0;
 }
+.Disabled-input::-webkit-inner-spin-button,
+.Disabled-input::-webkit-outer-spin-button {
+-webkit-appearance: none;
+}
 
 
 @media (max-width: 520px) {
