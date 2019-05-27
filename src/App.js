@@ -49,11 +49,12 @@ class App extends React.Component {
             tileValue = tileValue.charAt(0);
         };
 
-        if (tileValue === 0) {
+        if (tileValue == 0) {
             this.setState({
                 showAlert: true,
                 alertText: 'Uncorrect number!'
             });
+            tileValue = '.';
         }
 
         let tiles = this.state.board.split('');
