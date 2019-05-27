@@ -20,7 +20,10 @@
     font-weight: normal;
     color: #2751c4;
     background-color: #e3e8ea;
+    -moz-appearance:textfield;
+    padding-left: 0;
 }
+
 
 @media (max-width: 520px) {
     .Tile-input {
