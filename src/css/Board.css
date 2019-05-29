@@ -6,14 +6,16 @@
     flex-wrap: wrap;
     position: relative;
     border: 8px solid #84817a;
+    box-shadow: 3px 3px 10px #3f3d38;
 }
 
-.Border-right {
+/*.Border-right {
     border-right: 4px solid #84817a;
 }
 .Border-bottom {
     border-bottom: 4px solid #84817a;
-}
+}*/
+
 
 @media (max-width: 520px) {
     .Board {

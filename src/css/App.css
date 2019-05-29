@@ -32,6 +32,7 @@ h1 {
     border: 3px solid #b33939;
     background-color: #fff;
     transition: .15s;
+    box-shadow: 2px 2px 7px #3f3d38;
 }
 
 .App-button:hover {

@@ -12,7 +12,7 @@ const Tile = (props) => {
 
     if (props.initialTile === '.') {
         return(
-            <div className={props.tileClassName}>
+            <div className="Tile">
                 <input
                     className="Tile-input"
                     type="number"
@@ -25,7 +25,7 @@ const Tile = (props) => {
         )
     } else {
         return(
-            <div className={props.tileClassName}>
+            <div className="Tile">
                 <input
                     className="Tile-input Disabled-input"
                     type="number"
