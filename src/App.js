@@ -105,7 +105,7 @@ class App extends React.Component {
         return(
             <div className="App">
                 <div className="App-container">
-                    <h1>S U D O K U</h1>
+                    <h1>Sudoku</h1>
                     
                     <NewGame 
                         level={this.state.level}

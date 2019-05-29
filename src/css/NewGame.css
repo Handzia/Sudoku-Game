@@ -17,8 +17,8 @@
     font-size: 10px;
     font-weight: bold;
     text-transform: uppercase;
-    border: 3px solid #010309;
-    background-color: #e3e8ea;
+    border: 3px solid #b33939;
+    background-color: #fff;
     transition: .15s;
 }
 .Level-button:first-child {
@@ -26,7 +26,7 @@
 }
 
 .Level-button:hover, .Active {
-    background-color: #2751c4;
+    background-color: #b33939;
     color: #e3e8ea;
 }
 

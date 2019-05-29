@@ -26,14 +26,14 @@
     font-size: 24px;
     font-weight: bold;
     padding: 15px 30px;
-    border-top: 3px solid #2751c4;
-    border-bottom: 3px solid #2751c4;
+    border-top: 3px solid #b33939;
+    border-bottom: 3px solid #b33939;
 }
 
 .Close-button {
     width: 40px;
     height: 40px;
-    border: 3px solid #010309;
+    border: 3px solid black;
     border-radius: 50%;
     background-color: #fff;
     position: absolute;
@@ -48,7 +48,7 @@
     content: '';
     width: 14px;
     height: 3px;
-    background-color: #010309;
+    background-color: black;
     position: absolute;
     top: 15px;
     left: 10px;
@@ -61,10 +61,10 @@
 }
 
 .Close-button:hover {
-    background-color: #2751c4;
+    background-color: #b33939;
 }
 .Close-button:hover::before, .Close-button:hover::after {
-    background-color: #e3e8ea;
+    background-color: #fff;
 }
 
 @media (max-width: 520px) {

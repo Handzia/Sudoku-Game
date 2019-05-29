@@ -5,14 +5,14 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    border: 8px solid #010309;
+    border: 8px solid #84817a;
 }
 
 .Border-right {
-    border-right: 4px solid #010309;
+    border-right: 4px solid #84817a;
 }
 .Border-bottom {
-    border-bottom: 4px solid #010309;
+    border-bottom: 4px solid #84817a;
 }
 
 @media (max-width: 520px) {
