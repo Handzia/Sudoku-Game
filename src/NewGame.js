@@ -2,26 +2,26 @@ import React from 'react';
 import './css/NewGame.css';
 
 
-const NewGame = (props) => {
+const NewGame = ({level, chooseLevel, getNewBoard}) => {
     
     return (
         <div className="NewGame-wrapper">
             <div className="Levels">
                 <button
-                    className={"Level-button" + " " + (props.level === 'easy' ? 'Active' : '')}
-                    onClick={() => props.chooseLevel('easy')}
+                    className={`Level-button ${level === 'easy' ? 'Active' : ''}`}
+                    onClick={() => chooseLevel('easy')}
                 >easy</button>
                 <button
-                    className={"Level-button" + " " + (props.level === 'medium' ? 'Active' : '')}
-                    onClick={() => props.chooseLevel('medium')}
+                    className={`Level-button ${level === 'medium' ? 'Active' : ''}`}
+                    onClick={() => chooseLevel('medium')}
                 >medium</button>
                 <button
-                    className={"Level-button" + " " + (props.level === 'hard' ? 'Active' : '')}
-                    onClick={() => props.chooseLevel('hard')}
+                    className={`Level-button ${level === 'hard' ? 'Active' : ''}`}
+                    onClick={() => chooseLevel('hard')}
                 >hard</button>         
             </div>
             
-            <button className="App-button" onClick={props.getNewBoard}>New Game</button>
+            <button className="App-button" onClick={getNewBoard}>New Game</button>
         </div>
     )
 };

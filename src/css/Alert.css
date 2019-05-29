@@ -15,7 +15,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 3px solid #010309;
+    /*border: 3px solid #010309;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,13 +33,14 @@
 .Close-button {
     width: 40px;
     height: 40px;
-    border: 3px solid black;
+    border: 3px solid #84817a;
     border-radius: 50%;
     background-color: #fff;
     position: absolute;
     top: 0;
     right: 0;
     transform: translate(50%, -50%);
+    outline: none;
     transition: .15s;
 }
 
@@ -62,6 +63,7 @@
 
 .Close-button:hover {
     background-color: #b33939;
+    border-color: #b33939;
 }
 .Close-button:hover::before, .Close-button:hover::after {
     background-color: #fff;

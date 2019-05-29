@@ -20,6 +20,7 @@
     border: 3px solid #b33939;
     background-color: #fff;
     box-shadow: 1px 1px 4px #3f3d38;
+    outline: none;
     transition: .15s;
 }
 .Level-button:first-child {

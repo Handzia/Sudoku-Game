@@ -27,7 +27,7 @@ class App extends React.Component {
     }
 
     chooseLevel(level){        
-        this.setState({level: level});
+        this.setState({level});
     }
 
     getNewBoard() {
@@ -77,7 +77,7 @@ class App extends React.Component {
         } else {
             this.setState({
                 showAlert: true,
-                alertText: 'This sudoku can not be solved! Correct your numbers and try again.'
+                alertText: 'This sudoku can\'t be solved! Correct your numbers and try again.'
             });
         }    
     }

@@ -2,16 +2,16 @@ import React from 'react';
 import './css/Alert.css';
 
 
-const Alert = (props) => {
+const Alert = ({showAlert, alertText, hideAlert}) => {
     
-    if (props.showAlert) {
+    if (showAlert) {
         return (
             <div className="Overlay">
                 <div className="Alert">
-                    <p className="Alert-text">{props.alertText}</p>
+                    <p className="Alert-text">{alertText}</p>
                     <button 
                         className="Close-button"
-                        onClick={props.hideAlert}
+                        onClick={hideAlert}
                     ></button>
                 </div>
             </div>

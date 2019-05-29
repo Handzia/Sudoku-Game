@@ -1,40 +1,25 @@
 import React from 'react';
 import './css/Tile.css';
 
+const Tile = ({tile, initialTile, handleChange}) => {
+    let tileValue;
+    let disabled;
+    tile === '.' ? tileValue = '' : tileValue = tile;
+    initialTile === '.' ? disabled = false : disabled = true;
 
-const Tile = (props) => {
-    let tile;
-    if (props.tile === '.') {
-        tile = '';
-    } else {
-        tile = props.tile;
-    }
-
-    if (props.initialTile === '.') {
-        return(
-            <div className="Tile">
-                <input
-                    className="Tile-input"
-                    type="number"
-                    min="1"
-                    max="9"
-                    onChange={(e) => props.handleChange(e.target.value)}
-                    value={tile}
-                />
-            </div>
-        )
-    } else {
-        return(
-            <div className="Tile">
-                <input
-                    className="Tile-input Disabled-input"
-                    type="number"
-                    value={tile}
-                    disabled
-                />
-            </div>
-        )
-    }    
+    return (
+        <div className="Tile">
+            <input
+                className={`Tile-input ${initialTile === '.' ? '' : 'Disabled-input'}`}
+                type="number"
+                min="1"
+                max="9"
+                onChange={(e) => handleChange(e.target.value)}
+                value={tileValue}
+                disabled={disabled}
+            />
+        </div>
+    )   
 };
 
 export default Tile;
