@@ -83,9 +83,12 @@ class App extends React.Component {
     }
     check(){
         if (sudoku.solve(this.state.board)) {
+            let alertText;
+            this.state.board.length === this.state.board.replace('.', '').length ? alertText = 'Congratulations!!! You won!' : alertText = 'All is correct. Keep going!';
+
             this.setState({
                 showAlert: true,
-                alertText: 'All is correct. Keep going!'
+                alertText
             });
         } else {
             this.setState({
