@@ -84,7 +84,7 @@ class App extends React.Component {
     check(){
         if (sudoku.solve(this.state.board)) {
             let alertText;
-            this.state.board.length === this.state.board.replace('.', '').length ? alertText = 'Congratulations!!! You won!' : alertText = 'All is correct. Keep going!';
+            this.state.board.includes('.') ? alertText = 'All is correct. Keep going!' : alertText = 'Congratulations!!! You solved sudoku!';
 
             this.setState({
                 showAlert: true,
