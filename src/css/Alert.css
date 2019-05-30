@@ -51,14 +51,14 @@
     height: 3px;
     background-color: black;
     position: absolute;
-    top: 15px;
-    left: 10px;
+    top: 50%;
+    left: 50%;
 }
 .Close-button::before {
-    transform: rotate(45deg);  
+    transform: translate(-50%, -50%) rotate(45deg) ;  
 }
 .Close-button::after {
-    transform: rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .Close-button:hover {
