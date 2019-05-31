@@ -9,14 +9,6 @@ class App extends React.Component {
     constructor(props){
         super(props);
         
-        this.updateBoard = this.updateBoard.bind(this);
-        this.getNewBoard = this.getNewBoard.bind(this);
-        this.restart = this.restart.bind(this);
-        this.solve = this.solve.bind(this);
-        this.check = this.check.bind(this);
-        this.hideAlert = this.hideAlert.bind(this);
-        this.chooseLevel = this.chooseLevel.bind(this);
-        
         this.state = {
             initialBoard: '',
             board: '',
@@ -26,11 +18,11 @@ class App extends React.Component {
         };
     }
 
-    chooseLevel(level){        
+    chooseLevel = (level) => {        
         this.setState({level});
     }
 
-    getNewBoard() {
+    getNewBoard = () => {
         const newBoard = sudoku.generate(this.state.level);
         this.setState({
             initialBoard: newBoard,
@@ -38,7 +30,7 @@ class App extends React.Component {
         });
     }
 
-    updateBoard(tile, index){
+    updateBoard = (tile, index) => {
         let tileValue = tile;
         
         if (tile === '') {
@@ -62,42 +54,48 @@ class App extends React.Component {
         this.setState({board: tiles.join().replace(/,/g, '')});
     }
 
-    restart(){
+    restart = () => {
         this.setState({
             board: this.state.initialBoard
         });
     }
 
-    solve(){
-        const solvedBoard = sudoku.solve(this.state.board);
-        if (solvedBoard) {
-            this.setState({
-                board: solvedBoard
-            });
-        } else {
-            this.setState({
-                showAlert: true,
-                alertText: 'This sudoku can\'t be solved! Correct your numbers and try again.'
-            });
+    solve = () => {
+        if (this.state.board !== '') {
+            const solvedBoard = sudoku.solve(this.state.board);
+            if (solvedBoard) {
+                this.setState({
+                    board: solvedBoard
+                });
+            } else {
+                this.setState({
+                    showAlert: true,
+                    alertText: 'This sudoku can\'t be solved! Correct your numbers and try again.'
+                });
+            }
         }    
     }
-    check(){
-        if (sudoku.solve(this.state.board)) {
-            let alertText;
-            this.state.board.includes('.') ? alertText = 'All is correct. Keep going!' : alertText = 'Congratulations!!! You solved sudoku!';
+    
+    check = () => {
+        if (this.state.board !== '') {
+            if (sudoku.solve(this.state.board)) {
+                let alertText;
+                this.state.board.includes('.') ? alertText = 'All is correct. Keep going!' : alertText = 'Congratulations!!! You solved sudoku!';
 
-            this.setState({
-                showAlert: true,
-                alertText
-            });
-        } else {
-            this.setState({
-                showAlert: true,
-                alertText: 'Correct your numbers! Something went wrong...'
-            });
+                this.setState({
+                    showAlert: true,
+                    alertText
+                });
+            } else {
+                this.setState({
+                    showAlert: true,
+                    alertText: 'Correct your numbers! Something went wrong...'
+                });
+            }
         }
     }
-    hideAlert(){
+    
+    hideAlert = () => {
        this.setState({
             showAlert: false,
             alertText: ''
