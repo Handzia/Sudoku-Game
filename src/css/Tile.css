@@ -3,6 +3,7 @@
     width: calc(100% / 9);
     height: calc(100% / 9);
     background-color: #f4f2ed;
+    overflow: hidden;
 }
 
 .Tile:nth-child(9n+3), .Tile:nth-child(9n+6) {
@@ -25,14 +26,15 @@
     padding-left: 14px;
 }
 .Tile-input:focus {
-    border: 2px solid #b33939;
+    /* border: 2px solid #b33939; */
+    box-shadow: inset 0 0 15px rgba(179, 57, 57, .5);
 }
 
 .Disabled-input {
     font-weight: normal;
     color: #b33939;
     background-color: #f4f2ed;
-    -moz-appearance:textfield;
+    -moz-appearance: textfield;
     padding-left: 0;
 }
 .Disabled-input::-webkit-inner-spin-button,
