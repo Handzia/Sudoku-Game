@@ -1,3 +1,10 @@
+# Sudoku Game
+
+Sudoku game written in React with use sudoku-umd library. 
+
+## Demo:
+https://sudoku-game-6f082.firebaseapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
